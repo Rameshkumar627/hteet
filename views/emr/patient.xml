@@ -25,7 +25,8 @@
                     <div id="s_header">
                         <h1>Patient</h1>
                     </div>
-
+                    <br></br>
+                    <br></br>
                     <div class="oe_button_box" name="button_box">
                         <button type="object" name="action_view_bill" class="oe_stat_button" string="Bills" icon="fa-truck"/>
                         <button type="object" name="action_view_appointment" class="oe_stat_button" string="Appointment" icon="fa-book"/>
@@ -44,6 +45,7 @@
                         <field name="email"/>
                         <field name="mobile"/>
                         <field name="phone"/>
+                        <field name="whatsapp"/>
                     </group>
                     <notebook>
                         <page string="Contact Details">
@@ -177,7 +179,7 @@
                                 </div>
 
                                 <!-- Content-->
-                                <table>
+                                <table class="mati">
                                     <tr><th>Name</th><td>&#160;&#160;<field name="name"/></td></tr>
                                     <tr><th>ID</th><td>&#160;&#160;<field name="patient_uid"/></td></tr>
                                     <tr><th>Mobile  </th><td>&#160;&#160;<field name="mobile"/></td></tr>

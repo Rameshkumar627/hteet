@@ -43,6 +43,7 @@
                             <field name="email"/>
                             <field name="mobile"/>
                             <field name="phone"/>
+                            <field name="whatsapp"/>
                             <field name="person_type"/>
                         </group>
 

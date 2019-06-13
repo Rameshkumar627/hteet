@@ -49,5 +49,11 @@
     <menuitem id="dental_report_others_service" name="Service" action="action_arc_person_person_service" parent="dental_report_others" sequence="20"/>
     <menuitem id="dental_report_others_others" name="Others" action="action_arc_person_person_others" parent="dental_report_others" sequence="30"/>
 
+    <menuitem id="dental_report_demo" name="Demo" parent="dental_report" sequence="50"/>
+    <menuitem id="dental_report_demo_root" name="Root Canal Treatment" action="action_arc_demo_root" parent="dental_report_demo" sequence="10"/>
+    <menuitem id="dental_report_demo_implant" name="Dental Implants" action="action_arc_demo_implant" parent="dental_report_demo" sequence="10"/>
+    <menuitem id="dental_report_demo_fillings" name="Dental Fillings" action="action_arc_demo_fillings" parent="dental_report_demo" sequence="10"/>
+    <menuitem id="dental_report_demo_braces" name="Braces" action="action_arc_demo_braces" parent="dental_report_demo" sequence="10"/>
+    <menuitem id="dental_report_demo_crown" name="RCT + Crown" action="action_arc_demo_crown" parent="dental_report_demo" sequence="10"/>
 
 </odoo>

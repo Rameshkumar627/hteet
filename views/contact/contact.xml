@@ -26,6 +26,8 @@
                     <div id="s_header">
                         <h1>Contact Details</h1>
                     </div>
+                    <br></br>
+                    <br></br>
                     <field name="person_type" invisible="1"/>
 
                     <div>
@@ -102,12 +104,12 @@
                                 </div>
 
                                 <!-- Content-->
-                                <table>
+                                <table class="mati">
                                     <tr><th>Name</th><td>&#160;&#160;<field name="name"/></td></tr>
                                     <tr><th>ID</th><td>&#160;&#160;<field name="person_uid"/></td></tr>
-                                    <tr><th>Mobile  </th><td>&#160;&#160;<field name="mobile"/></td></tr>
+                                    <tr><th>Email  </th><td>&#160;&#160;<field name="email"/></td></tr>
                                     <tr><th>Phone</th><td>&#160;&#160;<field name="phone"/></td></tr>
-                                    <tr><th>Website</th><td>&#160;&#160;<field name="website"/></td></tr>
+                                    <tr><th>City</th><td>&#160;&#160;<field name="city"/></td></tr>
                                 </table>
                                 <!--<div class="card-content">-->
                                     <!--<div class="card-content__username">Name : <field name="name"/></div>-->
@@ -121,7 +123,10 @@
                             <!-- Footer-->
                             <div class="card-footer">
                                 <div class="card-footer__pens">
-                                    <span><field name="email"/></span> <div class="label">Email</div>
+                                    <span><field name="whatsapp"/></span> <div class="label">Whatsapp</div>
+                                </div>
+                                <div class="card-footer__pens">
+                                    <span><field name="mobile"/></span> <div class="label">Mobile</div>
                                 </div>
                             </div>
                         </div>

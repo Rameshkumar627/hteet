@@ -12,7 +12,7 @@ class Employee(models.Model):
     _name = "arc.employee"
 
     name = fields.Char(string="Name", required=True)
-    employee_uid = fields.Char(string="Employee ID", readonly=True)
+    employee_uid = fields.Char(string="Employee ID", readonly=False)
     image = fields.Binary(string="Image")
     user_id = fields.Many2one(comodel_name="res.users", string="User")
     person_id = fields.Many2one(comodel_name="arc.person", string="Person")
@@ -21,6 +21,7 @@ class Employee(models.Model):
     email = fields.Char(string="e-Mail")
     mobile = fields.Char(string="Mobile")
     phone = fields.Char(string="Phone")
+    whatsapp = fields.Char(string="Whatsapp")
 
     # Address in Detail
     door_no = fields.Char(string="Door No")

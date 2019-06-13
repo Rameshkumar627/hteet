@@ -12,9 +12,10 @@ TRANSACTION_CATEGORY = [("credit_debit_card", "Credit/ Debit Card"),
 
 class Payment(models.Model):
     _name = "arc.payment"
+    _inherit = "mail.thread"
 
     date = fields.Date(string="Date", default=current_date)
-    name = fields.Char(string="Name", readonly=True)
+    name = fields.Char(string="Name", readonly=False)
     patient_id = fields.Many2one(comodel_name="arc.patient", string="Patient")
     amount = fields.Float(string="Amount", default=0.0)
     transaction_type = fields.Selection(selection=TRANSACTION_TYPE, string="Payment")

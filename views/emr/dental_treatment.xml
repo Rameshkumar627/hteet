@@ -43,6 +43,46 @@
                                 <field name="treatment_ids" widget="many2many_tags"/>
                             </group>
                             <field name="treatment_comment" placeholder="Comment.."/>
+                            <table id="time_bar">
+                                <tr><th colspan="8">Upper Left</th><th colspan="8" style="text-align: right;">Upper Right</th></tr>
+                                <tr>
+                                    <td><field name="teeth_1"/></td>
+                                    <td><field name="teeth_2"/></td>
+                                    <td><field name="teeth_3"/></td>
+                                    <td><field name="teeth_4"/></td>
+                                    <td><field name="teeth_5"/></td>
+                                    <td><field name="teeth_6"/></td>
+                                    <td><field name="teeth_7"/></td>
+                                    <td><field name="teeth_8"/></td>
+                                    <td><field name="teeth_9"/></td>
+                                    <td><field name="teeth_10"/></td>
+                                    <td><field name="teeth_11"/></td>
+                                    <td><field name="teeth_12"/></td>
+                                    <td><field name="teeth_13"/></td>
+                                    <td><field name="teeth_14"/></td>
+                                    <td><field name="teeth_15"/></td>
+                                    <td><field name="teeth_16"/></td>
+                                </tr>
+                                <tr>
+                                    <td><field name="teeth_32"/></td>
+                                    <td><field name="teeth_31"/></td>
+                                    <td><field name="teeth_30"/></td>
+                                    <td><field name="teeth_29"/></td>
+                                    <td><field name="teeth_28"/></td>
+                                    <td><field name="teeth_27"/></td>
+                                    <td><field name="teeth_26"/></td>
+                                    <td><field name="teeth_25"/></td>
+                                    <td><field name="teeth_24"/></td>
+                                    <td><field name="teeth_23"/></td>
+                                    <td><field name="teeth_22"/></td>
+                                    <td><field name="teeth_21"/></td>
+                                    <td><field name="teeth_20"/></td>
+                                    <td><field name="teeth_19"/></td>
+                                    <td><field name="teeth_18"/></td>
+                                    <td><field name="teeth_17"/></td>
+                                </tr>
+                                <tr><th colspan="8">Lower Left</th><th colspan="8" style="text-align: right;">Lower Right</th></tr>
+                            </table>
                             <separator string="Teeth Details"/>
                             <field name="teeth_ids">
                                 <tree editable="bottom">

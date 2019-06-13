@@ -20,6 +20,7 @@ class ArcPerson(models.Model):
     email = fields.Char(string="e-Mail")
     mobile = fields.Char(string="Mobile")
     phone = fields.Char(string="Phone")
+    whatsapp = fields.Char(string="Whatsapp")
     website = fields.Char(string="Website")
     contact_name = fields.Char(string="Contact Name")
     contact_position = fields.Char(string="Position")

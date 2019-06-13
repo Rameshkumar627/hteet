@@ -60,6 +60,14 @@
         "views/others/supplier.xml",
         "views/others/service.xml",
 
+        "views/demo/root_canal_treatment.xml",
+        "views/demo/dental_implant.xml",
+        "views/demo/braces.xml",
+        "views/demo/crown.xml",
+        "views/demo/dental_fillings.xml",
+        
+
+
         # Menu
         "views/menu/menu.xml",
 

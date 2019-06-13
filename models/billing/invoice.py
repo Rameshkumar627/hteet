@@ -11,9 +11,10 @@ PAYMENT_PROGRESS = [("un_paid", "Un-Paid"), ("partially_paid", "Partially Paid")
 
 class Invoice(models.Model):
     _name = "arc.invoice"
+    _inherit = "mail.thread"
 
     date = fields.Date(string="Date", default=current_date)
-    name = fields.Char(string="Name", readonly=True)
+    name = fields.Char(string="Name", readonly=False)
     doctor_id = fields.Many2one(comodel_name="arc.employee", string="Doctor")
     patient_id = fields.Many2one(comodel_name="arc.patient", string="Patient")
     detail_ids = fields.One2many(comodel_name="invoice.detail", inverse_name="invoice_id", string="Invoice Detail")
@@ -30,6 +31,9 @@ class Invoice(models.Model):
     cgst = fields.Float(string="CGST", default=0.0)
     sgst = fields.Float(string="SGST", default=0.0)
     igst = fields.Float(string="IGST", default=0.0)
+
+    file_name = fields.Char(string="File Name", default="Invoice.pdf")
+    report = fields.Binary(string="Report")
 
     def get_dental_table(self):
         heading = """<tr>

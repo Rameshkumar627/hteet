@@ -12,7 +12,7 @@ class Patient(models.Model):
     _name = "arc.patient"
 
     name = fields.Char(string="Name", required=True)
-    patient_uid = fields.Char(string="Patient ID", readonly=False)
+    patient_uid = fields.Char(string="Patient ID", readonly=True)
     image = fields.Binary(string="Image")
     person_id = fields.Many2one(comodel_name="arc.person", string="Person")
     identity_ids = fields.One2many(comodel_name="arc.identity", inverse_name="patient_id")
@@ -21,6 +21,7 @@ class Patient(models.Model):
     email = fields.Char(string="e-Mail")
     mobile = fields.Char(string="Mobile")
     phone = fields.Char(string="Phone")
+    whatsapp = fields.Char(string="Whatsapp")
 
     # Alternate Contact
     alternate_contact_name = fields.Char(string="Name")
