@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Menu : Dental Hospital-->
+    <menuitem id="dental_treatment" name="Treatment" sequence="10"/>
+
+    <!--Menu : Treatment-->
+    <!--Menu : Treatment / Contact-->
+    <menuitem id="dental_treatment_contact" name="Contact" parent="dental_treatment" sequence="10"/>
+    <menuitem id="dental_treatment_contact_patient" name="Patient" action="action_arc_person_patient" parent="dental_treatment_contact" sequence="10"/>
+    <menuitem id="dental_treatment_contact_staff" name="Doctor/ Staff" action="action_arc_person_staff" parent="dental_treatment_contact" sequence="20"/>
+    <menuitem id="dental_treatment_contact_supplier" name="Supplier" action="action_arc_person_supplier" parent="dental_treatment_contact" sequence="30"/>
+    <menuitem id="dental_treatment_contact_service" name="Service" action="action_arc_person_service" parent="dental_treatment_contact" sequence="40"/>
+
+    <menuitem id="dental_treatment_emr" name="EMR" parent="dental_treatment" sequence="20"/>
+    <menuitem id="dental_treatment_emr_patient" name="Patient" action="action_arc_patient" parent="dental_treatment_emr" sequence="10"/>
+    <menuitem id="dental_treatment_emr_appointment" name="Appointment" action="action_arc_appointment" parent="dental_treatment_emr" sequence="20"/>
+    <menuitem id="dental_treatment_emr_dental_treatment" name="Treatment" action="action_dental_treatment" parent="dental_treatment_emr" sequence="30"/>
+    <menuitem id="dental_treatment_emr_prescription" name="Prescription" action="action_arc_prescription" parent="dental_treatment_emr" sequence="40"/>
+    <menuitem id="dental_treatment_emr_clinical_notes" name="Clinical Notes" action="action_clinical_notes" parent="dental_treatment_emr" sequence="50"/>
+
+    <menuitem id="dental_treatment_billing" name="Billing" parent="dental_treatment" sequence="30"/>
+    <menuitem id="dental_treatment_billing_invoice" name="Invoice" action="action_arc_invoice" parent="dental_treatment_billing" sequence="10"/>
+    <menuitem id="dental_treatment_billing_payment" name="Payment" action="action_arc_payment" parent="dental_treatment_billing" sequence="20"/>
+
+    <menuitem id="dental_treatment_configuration" name="Configuration" parent="dental_treatment" sequence="40"/>
+    <menuitem id="dental_treatment_configuration_symptoms" name="Symptoms" action="action_arc_symptoms" parent="dental_treatment_configuration" sequence="10"/>
+    <menuitem id="dental_treatment_configuration_diagnosis" name="Diagnosis" action="action_arc_diagnosis" parent="dental_treatment_configuration" sequence="20"/>
+    <menuitem id="dental_treatment_configuration_treatment" name="Treatment" action="action_arc_treatment" parent="dental_treatment_configuration" sequence="30"/>
+    <menuitem id="dental_treatment_configuration_appointment_reason" name="Appointment reason" action="action_appointment_reason" parent="dental_treatment_configuration" sequence="40"/>
+    <menuitem id="dental_treatment_configuration_appointment_type" name="Appointment Type" action="action_appointment_type" parent="dental_treatment_configuration" sequence="50"/>
+    <menuitem id="dental_treatment_configuration_invoice_description" name="Invoice Description" action="action_invoice_description" parent="dental_treatment_configuration" sequence="60"/>
+    <menuitem id="dental_treatment_configuration_product" name="Product" action="action_arc_product" parent="dental_treatment_configuration" sequence="70"/>
+    <menuitem id="dental_treatment_configuration_teeth" name="Teeth" action="action_teeth_teeth" parent="dental_treatment_configuration" sequence="80"/>
+
+    <menuitem id="dental_report" name="Report" sequence="20"/>
+    <menuitem id="dental_report_dashboard" name="Dashboard" parent="dental_report" sequence="10"/>
+    <menuitem id="dental_report_report" name="Report" parent="dental_report" sequence="20"/>
+
+    <menuitem id="dental_report_staff" name="Staff" parent="dental_report" sequence="30"/>
+    <menuitem id="dental_report_staff_staff" name="Doctor/ Staff" action="action_arc_employee" parent="dental_report_staff" sequence="10"/>
+    <menuitem id="dental_report_staff_doctor_availability" name="Doctor Availability" action="action_doctor_availability" parent="dental_report_staff" sequence="20"/>
+    <menuitem id="dental_report_staff_doctor_timings" name="Doctor Timings" action="action_doctor_timings" parent="dental_report_staff" sequence="30"/>
+    <menuitem id="dental_report_staff_doctor_notes" name="Notes" action="action_arc_notes" parent="dental_report_staff" sequence="40"/>
+    <menuitem id="dental_report_staff_doctor_reminder" name="Reminder" action="action_arc_reminder" parent="dental_report_staff" sequence="50"/>
+
+    <menuitem id="dental_report_others" name="Others" parent="dental_report" sequence="40"/>
+    <menuitem id="dental_report_others_supplier" name="Supplier" action="action_arc_person_person_supplier" parent="dental_report_others" sequence="10"/>
+    <menuitem id="dental_report_others_service" name="Service" action="action_arc_person_person_service" parent="dental_report_others" sequence="20"/>
+    <menuitem id="dental_report_others_others" name="Others" action="action_arc_person_person_others" parent="dental_report_others" sequence="30"/>
+
+
+</odoo>

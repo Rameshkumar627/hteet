@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_teeth_teeth_tree" model="ir.ui.view">
+        <field name="name">teeth.teeth.tree</field>
+        <field name="model">teeth.teeth</field>
+        <field name="arch" type="xml">
+            <tree string="Teeth">
+                <field name="name"/>
+                <field name="teeth_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_teeth_teeth_form" model="ir.ui.view">
+        <field name="name">teeth.teeth.form</field>
+        <field name="model">teeth.teeth</field>
+        <field name="arch" type="xml">
+            <form string="Teeth">
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="teeth_type"/>
+                    </group>
+                    <field name="image" widget="image"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_teeth_teeth" model="ir.actions.act_window">
+        <field name="name">Teeth</field>
+        <field name="res_model">teeth.teeth</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

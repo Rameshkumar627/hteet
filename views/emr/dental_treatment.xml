@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_dental_treatment_tree" model="ir.ui.view">
+        <field name="name">dental.treatment.tree</field>
+        <field name="model">dental.treatment</field>
+        <field name="arch" type="xml">
+            <tree string="Treatment">
+                <field name="date"/>
+                <field name="patient_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_dental_treatment_form" model="ir.ui.view">
+        <field name="name">dental.treatment.form</field>
+        <field name="model">dental.treatment</field>
+        <field name="arch" type="xml">
+            <form string="Treatment">
+                <sheet>
+                    <div id="s_header">
+                        <h1>Dental Treatment</h1>
+                    </div>
+                    <h2><field name="name"/></h2>
+                    <group col="4">
+                        <field name="date"/>
+                        <field name="patient_id"/>
+                        <field name="patient_uid"/>
+                    </group>
+                    <button name="generate_report" string="Report" type="object"/>
+                    <notebook>
+                        <page string="Symptoms/ Diagnosis">
+                            <group col="4">
+                                <field name="symptoms_ids" widget="many2many_tags"/>
+                                <field name="diagnosis_ids" widget="many2many_tags"/>
+                            </group>
+                            <field name="diagnosis_comment" placeholder="Comment"/>
+                        </page>
+                        <page string="Treatment">
+                            <group>
+                                <field name="treatment_ids" widget="many2many_tags"/>
+                            </group>
+                            <field name="treatment_comment" placeholder="Comment.."/>
+                            <separator string="Teeth Details"/>
+                            <field name="teeth_ids">
+                                <tree editable="bottom">
+                                    <field name="teeth_id"/>
+                                    <field name="teeth_type"/>
+                                    <field name="treatment_ids" widget="many2many_tags"/>
+                                    <field name="comment" string="Remarks"/>
+                                </tree>
+                            </field>
+
+                            <group>
+                                <field name="attachment_ids" widget="many2many_binary"/>
+                                <field name="prescription_id"/>
+                            </group>
+
+                        </page>
+                        <page string="Report/ Billing">
+                            <group>
+                                <field name="report_pdf" filename="file_name"/>
+                                <field name="file_name" invisible="1"/>
+                                <field name="invoice_id"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_dental_treatment" model="ir.actions.act_window">
+        <field name="name">Treatment</field>
+        <field name="res_model">dental.treatment</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

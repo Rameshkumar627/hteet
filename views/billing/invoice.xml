@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_arc_invoice_tree" model="ir.ui.view">
+        <field name="name">arc.invoice.tree</field>
+        <field name="model">arc.invoice</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice">
+                <field name="date"/>
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+                <field name="grand_amount"/>
+                <field name="progress"/>
+                <field name="payment_progress"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_arc_invoice_form" model="ir.ui.view">
+        <field name="name">arc.invoice.form</field>
+        <field name="model">arc.invoice</field>
+        <field name="arch" type="xml">
+            <form string="Invoice">
+                <sheet>
+                    <div id="s_header">
+                        <h1>Invoice</h1>
+                    </div>
+                    <h2><field name="name"/></h2>
+                    <field name="progress" widget="statusbar"/>
+                    <group col="4">
+                        <field name="date"/>
+                        <field name="doctor_id"/>
+                        <field name="patient_id"/>
+                        <field name="payment_progress"/>
+                    </group>
+                    <button name="get_repo" string="Report" type="object"/>
+                    <field name="detail_ids">
+                        <tree editable="bottom">
+                            <field name="description_id"/>
+                            <field name="unit_price"/>
+                            <field name="discount"/>
+                            <field name="tax"/>
+                            <field name="total"/>
+                        </tree>
+                    </field>
+                    <group>
+                        <div style="float: left; width: 100%;">
+                            <table id="time_bar">
+                                <tr>
+                                    <th>sgst</th>
+                                    <th>cgst</th>
+                                    <th>igst</th>
+                                </tr>
+                                <tr>
+                                    <td align="right"><field name="sgst" nolabel="1"/></td>
+                                    <td align="right"><field name="cgst" nolabel="1"/></td>
+                                    <td align="right"><field name="igst" nolabel="1"/></td>
+                                </tr>
+                            </table>
+                            <br></br>
+                        </div>
+
+                        <div style="float: right; width: 70%;">
+                            <table id="time_bar">
+                                <tr>
+                                    <th>Sub Total</th>
+                                    <td align="right"><field name="sub_total_amount" nolabel="1"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Discount</th>
+                                    <td align="right"><field name="discount_amount" nolabel="1"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Tax</th>
+                                    <td align="right"><field name="tax_amount" nolabel="1"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Round-Off</th>
+                                    <td align="right"><field name="round_off" nolabel="1"/></td>
+                                </tr>
+                                <tr>
+                                    <th style="font-size: 25px">Grand Total</th>
+                                    <td align="right" style="font-size: 25px"><b><field name="grand_amount" nolabel="1"/></b></td>
+                                </tr>
+                            </table>
+                        </div>
+					</group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_arc_invoice" model="ir.actions.act_window">
+        <field name="name">Invoice</field>
+        <field name="res_model">arc.invoice</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
