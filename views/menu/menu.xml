@@ -33,7 +33,7 @@
     <menuitem id="dental_treatment_configuration_product" name="Product" action="action_arc_product" parent="dental_treatment_configuration" sequence="70"/>
     <menuitem id="dental_treatment_configuration_teeth" name="Teeth" action="action_teeth_teeth" parent="dental_treatment_configuration" sequence="80"/>
 
-    <menuitem id="dental_report" name="Report" sequence="20"/>
+    <menuitem id="dental_report" name="Hospital" sequence="20"/>
     <menuitem id="dental_report_dashboard" name="Dashboard" parent="dental_report" sequence="10"/>
     <menuitem id="dental_report_report" name="Report" parent="dental_report" sequence="20"/>
 

@@ -31,7 +31,8 @@ class Dental(models.Model):
     report = fields.Html(string="Report")
     attachment_ids = fields.Many2many(comodel_name="ir.attachment", string="Attachment")
     file_name = fields.Char(string="File Name", default="treatment.pdf")
-    report_pdf = fields.Binary(string="Prescription")
+    report_pdf = fields.Binary(string="Report")
+    next_appointment = fields.Date(string="Next Appointment")
 
     teeth_1 = fields.Boolean()
     teeth_2 = fields.Boolean()
