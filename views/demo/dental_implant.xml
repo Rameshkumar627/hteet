@@ -8,7 +8,8 @@
         <field name="arch" type="xml">
             <form string="Dental Implant">
                 <sheet>
-                     <iframe src="https://www.youtube.com/embed/_wGvcbJXX2s?modestbranding=1&amp;amp;autohide=1&amp;amp;showinfo=0&amp;amp;controls=0"
+                     <iframe width="100%" height="315"
+                             src="https://www.youtube.com/embed/_wGvcbJXX2s"
                              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
 
                      </iframe>
