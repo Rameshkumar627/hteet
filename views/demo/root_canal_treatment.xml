@@ -8,8 +8,7 @@
         <field name="arch" type="xml">
             <form string="Root Canal Treatment">
                 <sheet>
-                     <iframe width="820" height="315"
-                             src="https://www.youtube.com/embed/0s35QCFg7p0"
+                     <iframe src="https://www.youtube.com/embed/0s35QCFg7p0?modestbranding=1&amp;amp;autohide=1&amp;amp;showinfo=0&amp;amp;controls=0"
                              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
 
                      </iframe>
