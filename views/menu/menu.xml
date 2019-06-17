@@ -2,7 +2,7 @@
 <odoo>
 
     <!--Menu : Dental Hospital-->
-    <menuitem id="dental_treatment" name="Treatment" sequence="10"/>
+    <menuitem id="dental_treatment" name="Treatment" sequence="10" web_icon="hteet,static/src/image/icon.png"/>
 
     <!--Menu : Treatment-->
     <!--Menu : Treatment / Contact-->
@@ -33,23 +33,22 @@
     <menuitem id="dental_treatment_configuration_product" name="Product" action="action_arc_product" parent="dental_treatment_configuration" sequence="70"/>
     <menuitem id="dental_treatment_configuration_teeth" name="Teeth" action="action_teeth_teeth" parent="dental_treatment_configuration" sequence="80"/>
 
-    <menuitem id="dental_report" name="Hospital" sequence="20"/>
-    <menuitem id="dental_report_dashboard" name="Dashboard" parent="dental_report" sequence="10"/>
-    <menuitem id="dental_report_report" name="Report" parent="dental_report" sequence="20"/>
+    <menuitem id="dental_report_dashboard" name="Dashboard" parent="dental_treatment" sequence="50"/>
+    <menuitem id="dental_report_report" name="Report" parent="dental_treatment" sequence="60"/>
 
-    <menuitem id="dental_report_staff" name="Staff" parent="dental_report" sequence="30"/>
+    <menuitem id="dental_report_staff" name="Staff" parent="dental_treatment" sequence="70"/>
     <menuitem id="dental_report_staff_staff" name="Doctor/ Staff" action="action_arc_employee" parent="dental_report_staff" sequence="10"/>
     <menuitem id="dental_report_staff_doctor_availability" name="Doctor Availability" action="action_doctor_availability" parent="dental_report_staff" sequence="20"/>
     <menuitem id="dental_report_staff_doctor_timings" name="Doctor Timings" action="action_doctor_timings" parent="dental_report_staff" sequence="30"/>
     <menuitem id="dental_report_staff_doctor_notes" name="Notes" action="action_arc_notes" parent="dental_report_staff" sequence="40"/>
     <menuitem id="dental_report_staff_doctor_reminder" name="Reminder" action="action_arc_reminder" parent="dental_report_staff" sequence="50"/>
 
-    <menuitem id="dental_report_others" name="Others" parent="dental_report" sequence="40"/>
+    <menuitem id="dental_report_others" name="Others" parent="dental_treatment" sequence="80"/>
     <menuitem id="dental_report_others_supplier" name="Supplier" action="action_arc_person_person_supplier" parent="dental_report_others" sequence="10"/>
     <menuitem id="dental_report_others_service" name="Service" action="action_arc_person_person_service" parent="dental_report_others" sequence="20"/>
     <menuitem id="dental_report_others_others" name="Others" action="action_arc_person_person_others" parent="dental_report_others" sequence="30"/>
 
-    <menuitem id="dental_report_demo" name="Demo" parent="dental_report" sequence="50"/>
+    <menuitem id="dental_report_demo" name="Demo" parent="dental_treatment" sequence="90"/>
     <menuitem id="dental_report_demo_root" name="Root Canal Treatment" action="action_arc_demo_root" parent="dental_report_demo" sequence="10"/>
     <menuitem id="dental_report_demo_implant" name="Dental Implants" action="action_arc_demo_implant" parent="dental_report_demo" sequence="10"/>
     <menuitem id="dental_report_demo_fillings" name="Dental Fillings" action="action_arc_demo_fillings" parent="dental_report_demo" sequence="10"/>
