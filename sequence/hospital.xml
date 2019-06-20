@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+
+        <!-- Product : arc.product -->
+        <record id="arc_product_sequence" model="ir.sequence">
+            <field name="name">Product</field>
+            <field name="code">arc.product</field>
+            <field name="prefix">PRT</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Product : arc.pharmacy -->
+        <record id="arc_pharmacy_sequence" model="ir.sequence">
+            <field name="name">Pharmacy</field>
+            <field name="code">arc.pharmacy</field>
+            <field name="prefix">PHR</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+
+    </data>
+
+</odoo>

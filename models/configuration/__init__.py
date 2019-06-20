@@ -6,5 +6,4 @@ from . import treatment
 from . import appointment_reason
 from . import appointment_type
 from . import invoice_description
-from . import product
 from . import teeth

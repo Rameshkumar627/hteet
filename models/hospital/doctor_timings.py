@@ -22,7 +22,7 @@ class DoctorTimings(models.Model):
         timings_id = super(DoctorTimings, self).create(vals)
 
         for rec in DAY:
-            self.env["timings.detail"].create({"day": rec[0], "timings_id": timings_id.id})
+            self.env["timings.detail"].create({"day": rec[0], "timing_id": timings_id.id})
 
         return timings_id
 

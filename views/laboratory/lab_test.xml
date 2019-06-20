@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_lab_test_tree" model="ir.ui.view">
+        <field name="name">lab.test.tree</field>
+        <field name="model">lab.test</field>
+        <field name="arch" type="xml">
+            <tree string="Lab Test">
+                <field name="master_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_lab_test_form" model="ir.ui.view">
+        <field name="name">lab.test.form</field>
+        <field name="model">lab.test</field>
+        <field name="arch" type="xml">
+            <form string="Lab Test">
+                <sheet>
+                    <group col="4">
+                        <field name="laboratory_id"/>
+                        <field name="master_id"/>
+                        <field name="price"/>
+                    </group>
+                    <notebook>
+                        <page string="Parameters(Value)">
+                            <field name="value_ids">
+                                <tree editable="bottom">
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="value"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Parameters(Attachment)">
+                            <field name="image_ids">
+                                <tree editable="bottom">
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="image"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Template">
+                            <field name="template"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_lab_test" model="ir.actions.act_window">
+        <field name="name">Lab Test</field>
+        <field name="res_model">lab.test</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

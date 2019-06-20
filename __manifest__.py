@@ -24,6 +24,8 @@
     "data": [
 
         "views/assert_backend.xml",
+
+        "sequence/hospital.xml",
         
         "views/contact/contact.xml",
         "views/contact/patient.xml",
@@ -46,7 +48,6 @@
         "views/configuration/appointment_type.xml",
         "views/configuration/appointment_reason.xml",
         "views/configuration/invoice_description.xml",
-        "views/configuration/product.xml",
         "views/configuration/teeth.xml",
 
         "views/staff/doctor_availability.xml",
@@ -65,8 +66,23 @@
         "views/demo/braces.xml",
         "views/demo/crown.xml",
         "views/demo/dental_fillings.xml",
-        
 
+        "views/laboratory/lab_master.xml",
+        "views/laboratory/lab_test.xml",
+        "views/laboratory/laboratory.xml",
+        
+        "views/pharmacy/product_group.xml",
+        "views/pharmacy/product_sub_group.xml",
+        "views/pharmacy/product.xml",
+        "views/pharmacy/batch.xml",
+        "views/pharmacy/location.xml",
+        "views/pharmacy/stock_move.xml",
+
+        "views/pharmacy/stock_transact.xml",
+        "views/pharmacy/stock_inward.xml",
+        "views/pharmacy/stock_scrap.xml",
+        "views/pharmacy/stock_block.xml",
+        "views/pharmacy/pharmacy.xml",
 
         # Menu
         "views/menu/menu.xml",

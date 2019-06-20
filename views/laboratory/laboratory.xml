@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_arc_lab_tree" model="ir.ui.view">
+        <field name="name">arc.lab.tree</field>
+        <field name="model">arc.lab</field>
+        <field name="arch" type="xml">
+            <tree string="Laboratory">
+                <field name="date"/>
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="invoice_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_arc_lab_form" model="ir.ui.view">
+        <field name="name">arc.lab.form</field>
+        <field name="model">arc.lab</field>
+        <field name="arch" type="xml">
+            <form string="Laboratory">
+                <sheet>
+                    <div id="s_header">
+                        <h1>Laboratory</h1>
+                    </div>
+                    <field name="progress" widget="statusbar" style="float: right;padding: 20px;"/>
+                    <h2><field name="name"/></h2>
+                    <group col="4">
+                        <field name="date"/>
+                        <field name="patient_id"/>
+                        <field name="invoice_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Test Details">
+                            <field name="test_ids">
+                                <tree editable="bottom">
+                                    <field name="master_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Report">
+                            <field name="report"/>
+                        </page>
+                    </notebook>
+                    <field name="attachment_ids" widget="many2many_binary"/>
+                    <field name="comment" placeholder="Comment.."/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_arc_lab" model="ir.actions.act_window">
+        <field name="name">Laboratory</field>
+        <field name="res_model">arc.lab</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

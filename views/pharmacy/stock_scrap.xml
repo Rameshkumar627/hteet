@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Action Patient-->
+    <record id="action_stock_transact_scrap" model="ir.actions.act_window">
+        <field name="name">Scrap</field>
+        <field name="res_model">stock.transact</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('transact_type', '=', 'scrap')]</field>
+        <field name="context">{'default_transact_type': 'scrap'}</field>
+        <field name="view_id" ref="view_stock_transact_tree"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_stock_transact_scrap_form">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_stock_transact_form" />
+        <field name="act_window_id" ref="action_stock_transact_scrap"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_stock_transact_scrap_tree">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_stock_transact_tree"/>
+        <field name="act_window_id" ref="action_stock_transact_scrap"/>
+    </record>
+
+</odoo>
