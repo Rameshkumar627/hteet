@@ -10,6 +10,7 @@ class LabMaster(models.Model):
     code = fields.Char(string="Code")
     price = fields.Float(string="Price")
     template = fields.Html(string="Template")
+    paramsi = fields.Integer(string="Parameter")
     value_ids = fields.One2many(comodel_name="lab.master.detail.value", inverse_name="lab_id")
     image_ids = fields.One2many(comodel_name="lab.master.detail.image", inverse_name="lab_id")
 

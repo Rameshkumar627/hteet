@@ -24,6 +24,7 @@
                         <field name="name"/>
                         <field name="code"/>
                         <field name="price"/>
+                        <field name="paramsi"/>
                     </group>
                     <notebook>
                         <page string="Parameters(Value)">

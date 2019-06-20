@@ -23,6 +23,9 @@
                         <field name="laboratory_id"/>
                         <field name="master_id"/>
                         <field name="price"/>
+                        <field name="paramsi"/>
+                        <field name="report_pdf" filename="file_name"/>
+                        <field name="file_name" invisible="1"/>
                     </group>
                     <notebook>
                         <page string="Parameters(Value)">
@@ -46,7 +49,13 @@
                         <page string="Template">
                             <field name="template"/>
                         </page>
+                        <page string="Report">
+                            <field name="report"/>
+                        </page>
                     </notebook>
+                    <footer>
+                        <button name="trigger_report" string="Report" type="object"/>
+                    </footer>
                 </sheet>
             </form>
         </field>

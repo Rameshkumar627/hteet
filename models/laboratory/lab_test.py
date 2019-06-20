@@ -1,6 +1,8 @@
 #
 
 from odoo import models, fields, api
+import pdfkit
+import base64
 
 
 class LabTest(models.Model):
@@ -9,10 +11,88 @@ class LabTest(models.Model):
     master_id = fields.Many2one(comodel_name="lab.master", string="Lab-Test")
     price = fields.Float(string="Price")
     template = fields.Html(string="Template")
+    paramsi = fields.Integer(string="Parameter")
     report = fields.Html(string="Report")
     value_ids = fields.One2many(comodel_name="lab.test.detail.value", inverse_name="lab_id")
     image_ids = fields.One2many(comodel_name="lab.test.detail.image", inverse_name="lab_id")
     laboratory_id = fields.Many2one(comodel_name="arc.lab", string="Laboratory")
+    report_pdf = fields.Binary(string="Report")
+    file_name = fields.Char(string="File Name", default="report.pdf")
+
+    @api.multi
+    def trigger_report(self):
+        value_recs = self.value_ids
+        image_recs = self.image_ids
+
+        data = {}
+        for rec in value_recs:
+            if rec.value:
+                data[rec.sequence] = rec.value
+            else:
+                data[rec.sequence] = ""
+
+        for rec in image_recs:
+            if rec.image:
+                data[rec.sequence] = rec.image
+            else:
+                data[rec.sequence] = ""
+
+        data[0] = self.laboratory_id.name
+        data[1] = self.laboratory_id.patient_id.name
+        data[2] = self.laboratory_id.patient_id.patient_uid
+        data[3] = self.laboratory_id.patient_id.mobile
+        data[4] = self.laboratory_id.patient_id.city
+        data[5] = self.laboratory_id.patient_id.email
+
+        print data
+
+        template = self.template
+
+        if self.paramsi == 13:
+            report = template.format(data[0],
+                                     data[1],
+                                     data[2],
+                                     data[3],
+                                     data[4],
+                                     data[5],
+                                     data[6],
+                                     data[7],
+                                     data[8],
+                                     data[9],
+                                     data[10],
+                                     data[11],
+                                     data[12],
+                                     data[13])
+        if self.paramsi == 8:
+            report = template.format(data[0],
+                                     data[1],
+                                     data[2],
+                                     data[3],
+                                     data[4],
+                                     data[5],
+                                     data[6],
+                                     data[7],
+                                     data[8])
+
+        if self.paramsi == 7:
+            report = template.format(data[0],
+                                     data[1],
+                                     data[2],
+                                     data[3],
+                                     data[4],
+                                     data[5],
+                                     data[6],
+                                     data[7])
+
+        self.report = report
+        pdfkit.from_string(report, '/opt/kon/out.pdf')
+
+        pdf_file = open('/opt/kon/out.pdf', 'rb')
+        out = pdf_file.read()
+        pdf_file.close()
+        gentextfile = base64.b64encode(out)
+
+        self.report_pdf = gentextfile
 
     @api.model
     def create(self, vals):
@@ -22,6 +102,7 @@ class LabTest(models.Model):
 
         vals["price"] = master_rec.price
         vals["template"] = master_rec.template
+        vals["paramsi"] = master_rec.paramsi
         lab_id = super(LabTest, self).create(vals)
 
         for rec in value_recs:

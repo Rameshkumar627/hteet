@@ -46,6 +46,9 @@
                     </notebook>
                     <field name="attachment_ids" widget="many2many_binary"/>
                     <field name="comment" placeholder="Comment.."/>
+                    <footer>
+                        <button name="trigger_confirm" string="Report" type="object"/>
+                    </footer>
                 </sheet>
             </form>
         </field>
