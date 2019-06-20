@@ -23,6 +23,45 @@
             <field name="number_increment">1</field>
         </record>
 
+        <!-- Product : stock.move -->
+        <record id="arc_move_sequence" model="ir.sequence">
+            <field name="name">Stock Move</field>
+            <field name="code">arc.move</field>
+            <field name="prefix">MV</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Product : stock.move -->
+        <record id="stock_inward_sequence" model="ir.sequence">
+            <field name="name">Stock Inward</field>
+            <field name="code">stock.transact.in</field>
+            <field name="prefix">SI</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Product : stock.transact.scrap -->
+        <record id="stock_scrap_sequence" model="ir.sequence">
+            <field name="name">Stock Scrap</field>
+            <field name="code">stock.transact.scrap</field>
+            <field name="prefix">SI</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Product : stock.transact.block -->
+        <record id="stock_block_sequence" model="ir.sequence">
+            <field name="name">Stock Block</field>
+            <field name="code">stock.transact.block</field>
+            <field name="prefix">SI</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
 
     </data>
 

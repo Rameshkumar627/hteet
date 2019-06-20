@@ -65,6 +65,7 @@
     <menuitem id="dental_pharmacy_product" name="Product" action="action_arc_product" parent="dental_pharmacy" sequence="20"/>
     <menuitem id="dental_pharmacy_product_group" name="Product Group" action="action_product_group" parent="dental_pharmacy" sequence="30"/>
     <menuitem id="dental_pharmacy_product_sub_group" name="Product Sub Group" action="action_product_sub_group" parent="dental_pharmacy" sequence="40"/>
+    <menuitem id="dental_pharmacy_product_tax" name="Product Tax" action="action_product_tax" parent="dental_pharmacy" sequence="40"/>
 
     <menuitem id="dental_stock" name="Stock" parent="dental_treatment" sequence="120"/>
     <menuitem id="dental_stock_location" name="Stock Location" action="action_arc_location" parent="dental_stock" sequence="10"/>

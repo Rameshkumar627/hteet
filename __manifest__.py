@@ -83,6 +83,7 @@
         "views/pharmacy/stock_scrap.xml",
         "views/pharmacy/stock_block.xml",
         "views/pharmacy/pharmacy.xml",
+        "views/billing/tax.xml",
 
         # Menu
         "views/menu/menu.xml",

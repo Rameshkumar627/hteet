@@ -54,6 +54,12 @@ class StockTransact(models.Model):
                                              "progress": "moved",
                                              "ref": self.name})
 
+    @api.model
+    def create(self, vals):
+        sequence = "{0}.{1}".format(self._name, vals["transact_type"])
+        vals["name"] = self.env["ir.sequence"].next_by_code(sequence)
+        return super(StockTransact, self).create(vals)
+
 
 class TransactDetail(models.Model):
     _name = "transact.detail"
