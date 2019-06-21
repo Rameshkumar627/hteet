@@ -2,7 +2,8 @@
 <odoo>
 
     <!--Menu : Dental Hospital-->
-    <menuitem id="dental_treatment" name="Treatment" sequence="10" web_icon="hteet,static/src/image/icon.png"/>
+    <menuitem id="dental_treatment" name="Treatment" sequence="10" web_icon="hteet,static/src/image/icons.png"/>
+    <menuitem id="dental_lab" name="Lab-Pharmacy" sequence="20" web_icon="hteet,static/src/image/pill.png"/>
 
     <!--Menu : Treatment-->
     <!--Menu : Treatment / Contact-->
@@ -55,19 +56,19 @@
     <menuitem id="dental_report_demo_braces" name="Braces" action="action_arc_demo_braces" parent="dental_report_demo" sequence="10"/>
     <menuitem id="dental_report_demo_crown" name="RCT + Crown" action="action_arc_demo_crown" parent="dental_report_demo" sequence="10"/>
 
-    <menuitem id="dental_treatment_lab" name="Laboratory" parent="dental_treatment" sequence="100"/>
+    <menuitem id="dental_treatment_lab" name="Laboratory" parent="dental_lab" sequence="10"/>
     <menuitem id="dental_treatment_lab_lab" name="Laboratory" action="action_arc_lab" parent="dental_treatment_lab" sequence="10"/>
     <menuitem id="dental_treatment_lab_test" name="Lab-Test" action="action_lab_test" parent="dental_treatment_lab" sequence="20"/>
     <menuitem id="dental_treatment_lab_master" name="Lab-Master" action="action_lab_master" parent="dental_treatment_lab" sequence="30"/>
 
-    <menuitem id="dental_pharmacy" name="Pharmacy" parent="dental_treatment" sequence="110"/>
+    <menuitem id="dental_pharmacy" name="Pharmacy" parent="dental_lab" sequence="20"/>
     <menuitem id="dental_pharmacy_pharmacy" name="Pharmacy" action="action_arc_pharmacy" parent="dental_pharmacy" sequence="10"/>
     <menuitem id="dental_pharmacy_product" name="Product" action="action_arc_product" parent="dental_pharmacy" sequence="20"/>
     <menuitem id="dental_pharmacy_product_group" name="Product Group" action="action_product_group" parent="dental_pharmacy" sequence="30"/>
     <menuitem id="dental_pharmacy_product_sub_group" name="Product Sub Group" action="action_product_sub_group" parent="dental_pharmacy" sequence="40"/>
     <menuitem id="dental_pharmacy_product_tax" name="Product Tax" action="action_product_tax" parent="dental_pharmacy" sequence="40"/>
 
-    <menuitem id="dental_stock" name="Stock" parent="dental_treatment" sequence="120"/>
+    <menuitem id="dental_stock" name="Stock" parent="dental_lab" sequence="120"/>
     <menuitem id="dental_stock_location" name="Stock Location" action="action_arc_location" parent="dental_stock" sequence="10"/>
     <menuitem id="dental_stock_current" name="Current Stock" action="action_arc_product" parent="dental_stock" sequence="20"/>
     <menuitem id="dental_stock_batch" name="Batch Stock" action="action_arc_batch" parent="dental_stock" sequence="20"/>
