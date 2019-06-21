@@ -50,6 +50,8 @@
 #invoice-title-number {
   font-weight: bold;
   margin: 30px 0;
+  text-align: right;
+
 }
 #invoice-title-number span {
   line-height: 0.88em;
@@ -62,6 +64,7 @@
   font-size: 25px;
   background: #F4846F;
   color: white;
+  text-align: right;
 }
 #invoice-title-number #number {
   margin-left: 10px;

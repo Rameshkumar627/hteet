@@ -4,10 +4,13 @@ from odoo import models, fields, api
 import pdfkit
 import base64
 
+PROGRESS_INFO = [("draft", "Draft"), ("completed", "Completed")]
+
 
 class LabTest(models.Model):
     _name = "lab.test"
 
+    name = fields.Char(string="Name", readonly=True)
     master_id = fields.Many2one(comodel_name="lab.master", string="Lab-Test")
     price = fields.Float(string="Price")
     template = fields.Html(string="Template")
@@ -18,6 +21,8 @@ class LabTest(models.Model):
     laboratory_id = fields.Many2one(comodel_name="arc.lab", string="Laboratory")
     report_pdf = fields.Binary(string="Report")
     file_name = fields.Char(string="File Name", default="report.pdf")
+    progress = fields.Selection(selection=PROGRESS_INFO, string="Progress", default="draft")
+    comment = fields.Text(string="Comment")
 
     @api.multi
     def trigger_report(self):
@@ -40,8 +45,8 @@ class LabTest(models.Model):
         data[0] = self.laboratory_id.name
         data[1] = self.laboratory_id.patient_id.name
         data[2] = self.laboratory_id.patient_id.patient_uid
-        data[3] = self.laboratory_id.patient_id.mobile
-        data[4] = self.laboratory_id.patient_id.city
+        data[3] = self.laboratory_id.patient_id.address
+        data[4] = self.laboratory_id.patient_id.mobile
         data[5] = self.laboratory_id.patient_id.email
 
         print data
@@ -63,7 +68,7 @@ class LabTest(models.Model):
                                      data[11],
                                      data[12],
                                      data[13])
-        if self.paramsi == 8:
+        if self.paramsi == 9:
             report = template.format(data[0],
                                      data[1],
                                      data[2],
@@ -93,6 +98,7 @@ class LabTest(models.Model):
         gentextfile = base64.b64encode(out)
 
         self.report_pdf = gentextfile
+        self.progress = "completed"
 
     @api.model
     def create(self, vals):
@@ -103,6 +109,7 @@ class LabTest(models.Model):
         vals["price"] = master_rec.price
         vals["template"] = master_rec.template
         vals["paramsi"] = master_rec.paramsi
+        vals["name"] = self.env["ir.sequence"].next_by_code(self._name)
         lab_id = super(LabTest, self).create(vals)
 
         for rec in value_recs:

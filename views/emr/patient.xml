@@ -46,6 +46,7 @@
                         <field name="mobile"/>
                         <field name="phone"/>
                         <field name="whatsapp"/>
+                        <field name="address"/>
                     </group>
                     <notebook>
                         <page string="Contact Details">

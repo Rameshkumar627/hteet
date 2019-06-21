@@ -83,6 +83,10 @@ class Pharmacy(models.Model):
         self.generate_payment()
         self.write({"payment_progress": "paid"})
 
+    @api.multi
+    def trigger_confirm(self):
+        self.write({"progress": "confirmed"})
+
     @api.model
     def create(self, vals):
         vals["name"] = self.env["ir.sequence"].next_by_code(self._name)
@@ -98,9 +102,9 @@ class PharmacyDetails(models.Model):
     expiry_date = fields.Date(string="Expiry Date", related="batch_id.expiry_date")
     unit_price = fields.Float(string="Unit Price", related="batch_id.unit_price")
     mrp = fields.Float(string="MRP", related="batch_id.mrp")
-    quantity = fields.Float(string="Quantity")
-    discount = fields.Float(string="Discount in INR", default=0.0)
-    tax_id = fields.Many2one(comodel_name="product.tax", string="Tax")
+    quantity = fields.Float(string="Quantity", default=0.0)
+    discount = fields.Float(string="Discount (%)", default=0.0)
+    tax_id = fields.Many2one(comodel_name="product.tax", string="Tax", required=True)
     total = fields.Float(string="Total in INR", default=0.0)
     pharmacy_id = fields.Many2one(comodel_name="arc.pharmacy", string="Pharmacy")
 

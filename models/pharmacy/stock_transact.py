@@ -11,8 +11,8 @@ current_date = datetime.now().strftime("%Y-%m-%d")
 class StockTransact(models.Model):
     _name = "stock.transact"
 
-    date = fields.Date(string="Date", default=current_date)
-    name = fields.Char(string="Name", readonlt=True)
+    date = fields.Date(string="Date", default=current_date, required=True)
+    name = fields.Char(string="Name", readonly=True)
     progress = fields.Selection(selection=PROGRESS_INFO, default="draft", string="Progress")
     transact_type = fields.Selection(selection=TRANSACT_TYPE, string="Transact Type")
     comment = fields.Text(string="Comment")
@@ -53,6 +53,7 @@ class StockTransact(models.Model):
                                              "destination_id": destination_id.id,
                                              "progress": "moved",
                                              "ref": self.name})
+        self.write({"progress": "Confirm"})
 
     @api.model
     def create(self, vals):

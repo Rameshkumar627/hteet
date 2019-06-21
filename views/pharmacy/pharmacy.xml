@@ -93,8 +93,12 @@
                         </div>
 					</group>
                     <footer>
-                        <button name="trigger_update_total" string="Update Total" type="object"/>
-                        <button name="trigger_paid" string="Paid" type="object"/>
+                        <button name="trigger_update_total" string="Update Total" type="object"
+                                attrs="{'invisible': [('payment_progress', '=', 'paid')]}"/>
+                        <button name="trigger_paid" string="Paid" type="object"
+                                attrs="{'invisible': [('payment_progress', '=', 'paid')]}"/>
+                        <button name="trigger_confirm" string="Confirm" type="object"
+                                attrs="{'invisible': [('progress', '!=', 'draft')]}"/>
                     </footer>
                 </sheet>
                 <div class="oe_chatter">

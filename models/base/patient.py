@@ -21,6 +21,7 @@ class Patient(models.Model):
     email = fields.Char(string="e-Mail")
     mobile = fields.Char(string="Mobile")
     phone = fields.Char(string="Phone")
+    address = fields.Text(string="Address")
     whatsapp = fields.Char(string="Whatsapp")
 
     # Alternate Contact
